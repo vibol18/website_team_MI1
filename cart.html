@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h2>MyShop</h2>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Cart</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="buttons">
+        <button>Sign Up</button>
+        <button class="login">Login</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Left Side -->
+    <div class="left">
+
+        <h2>Shopping Cart</h2>
+
+        <div class="product">
+            <img src="https://i.pinimg.com/1200x/41/71/ce/4171ce86670b3d683874e843d96be0a3.jpg" alt="Product">
+
+            <div class="details">
+                <h3>Samsung Smart TV</h3>
+                <p>Color: Black</p>
+                <p>Size: 43 Inch</p>
+                <p>$45</p>
+            </div>
+
+            <div class="qty">
+                <label>Quantity</label><br>
+                <input type="number" id="qty" value="1" min="1">
+            </div>
+        </div>
+
+        <h2 style="margin-top:30px;">Delivery Method</h2>
+
+        <div class="delivery">
+
+            <div class="card">
+                <h3>Standard Delivery</h3>
+                <p>3 - 5 Days</p>
+                <strong>$5</strong>
+            </div>
+
+            <div class="card">
+                <h3>Express Delivery</h3>
+                <p>1 - 2 Days</p>
+                <strong>$15</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="right">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary">
+
+            <p>
+                <span>Subtotal</span>
+                <span id="subtotal">$45</span>
+            </p>
+
+            <p>
+                <span>Shipping</span>
+                <span id="shipping">$5</span>
+            </p>
+
+            <h3>
+                <span>Total</span>
+                <span id="total">$50</span>
+            </h3>
+
+            <input
+                type="text"
+                id="coupon"
+                placeholder="Enter Coupon Code">
+
+            <button id="applyCoupon">
+                Apply Coupon
+            </button>
+
+            <div class="service">
+                <h3>Extra Service</h3>
+                <p>Gift Wrapping (+$3)</p>
+            </div>
+
+            <button class="checkout">
+                Proceed to Payment
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

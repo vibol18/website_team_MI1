@@ -2,35 +2,26 @@ let quantity = 1;
 
 const qty = document.getElementById("qty");
 
-document.getElementById("plus").onclick = () => {
+const plus = document.getElementById("plus");
+
+const minus = document.getElementById("minus");
+
+plus.addEventListener("click", function(){
+
     quantity++;
+
     qty.innerText = quantity;
-};
 
-document.getElementById("minus").onclick = () => {
+});
+
+minus.addEventListener("click", function(){
+
     if(quantity > 1){
+
         quantity--;
+
         qty.innerText = quantity;
+
     }
-};
-
-// Color Selection
-
-const colors = document.querySelectorAll(".color");
-const selected = document.getElementById("selectedColor");
-
-const names = ["Black","White","Blue","Red"];
-
-colors.forEach((color,index)=>{
-
-    color.addEventListener("click",()=>{
-
-        colors.forEach(c=>c.classList.remove("active"));
-
-        color.classList.add("active");
-
-        selected.innerText = names[index];
-
-    });
 
 });

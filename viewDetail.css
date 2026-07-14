@@ -112,26 +112,39 @@ h1{
 }
 
 .color{
-
     width:35px;
     height:35px;
     border-radius:50%;
     border:2px solid #ccc;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.yellow{
-
-    background:#FFD93D;
+.color:hover{
+    transform:scale(1.1);
 }
 
-.blue{
+.black{
+    background:black;
+}
 
-    background:#2F80ED;
+.gray{
+    background:gray;
 }
 
 .white{
-
     background:white;
+    border:2px solid #999;
+}
+
+.color.active{
+    border:4px solid #2F80ED;
+    transform:scale(1.1);
+}
+
+#selectedColor{
+    color:#2F80ED;
+    font-weight:bold;
 }
 
 .quantity{

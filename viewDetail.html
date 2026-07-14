@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpongeBob TV Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Smart TV Shop</title>
+    <link rel="stylesheet" href="viewDetail.css">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -27,11 +26,11 @@
 
         <div class="rating">
             ⭐⭐⭐⭐⭐
-            <span>4.7 (2,847 reviews)</span>
+            <span>4.5 (2,847 reviews)</span>
         </div>
 
         <div class="price">
-            <h2>$499.99</h2>
+            <h2>$599.99</h2>
             <del>$799.99</del>
             <span class="discount">25% OFF</span>
         </div>
@@ -41,13 +40,17 @@
             gaming and streaming.
         </p>
 
-        <h3>Colors</h3>
+        <h3>Color</h3>
 
-        <div class="colors">
-            <div class="color yellow"></div>
-            <div class="color blue"></div>
-            <div class="color white"></div>
-        </div>
+<div class="colors">
+    <div class="color black active" data-color="Black"></div>
+    <div class="color gray" data-color="Gray"></div>
+    <div class="color white" data-color="White"></div>
+</div>
+
+<p>Selected Color:
+    <span id="selectedColor">Black</span>
+</p>
 
         <h3>Quantity</h3>
 
@@ -55,7 +58,7 @@
 
             <button id="minus">-</button>
 
-            <span id="qty">1</span>
+            <span id="qty">0</span>
 
             <button id="plus">+</button>
 
@@ -102,7 +105,7 @@
 
 </div>
 
-<script src="script.js"></script>
+<script src="viewDetail.js"></script>
 
 </body>
 </html>

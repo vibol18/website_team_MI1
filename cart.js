@@ -1,80 +1,166 @@
-// Prices
-let productTotal = 2090;
-let deliveryFee = 10;
-let discount = 0;
+const plusButtons = document.querySelectorAll(".plus");
+const minusButtons = document.querySelectorAll(".minus");
 
-const servicePrices = {
-    warranty: 50,
-    installation: 30,
-    protection: 25
-};
+plusButtons.forEach(function(button){
 
-// Get elements
-const totalText = document.querySelector(".summary h3 span");
-const productText = document.querySelector(".summary p span");
-const discountText = document.querySelectorAll(".summary p span")[2];
+    button.addEventListener("click", function(){
 
-const services = document.querySelectorAll(".service input");
+        let quantity = this.previousElementSibling;
 
-// Update total
-function updateTotal() {
+        quantity.innerText = Number(quantity.innerText) + 1;
 
-    let serviceTotal = 0;
+    });
 
-    if (services[0].checked)
-        serviceTotal += servicePrices.warranty;
+});
 
-    if (services[1].checked)
-        serviceTotal += servicePrices.installation;
+minusButtons.forEach(function(button){
 
-    if (services[2].checked)
-        serviceTotal += servicePrices.protection;
+    button.addEventListener("click", function(){
 
-    let total = productTotal + deliveryFee + serviceTotal - discount;
+        let quantity = this.nextElementSibling;
 
-    totalText.innerHTML = "$" + total;
+        let value = Number(quantity.innerText);
+
+        if(value > 1){
+
+            quantity.innerText = value - 1;
+
+        }
+
+    });
+
+});
+
+
+const deliveryCards = document.querySelectorAll(".delivery-card");
+const shipping = document.getElementById("shipping");
+
+deliveryCards.forEach(function(card){
+
+    card.addEventListener("click", function(){
+
+        deliveryCards.forEach(function(c){
+            c.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        let price = this.querySelector("h4").innerText;
+
+        if(price === "FREE"){
+
+            shipping.innerText = "$0.00";
+
+        }else{
+
+            shipping.innerText = price;
+
+        }
+
+        calculateTotal();
+
+    });
+
+});
+
+
+const extras = document.querySelectorAll(".extra");
+const service = document.getElementById("service");
+
+extras.forEach(function(box){
+
+    box.addEventListener("change", calculateService);
+
+});
+
+function calculateService(){
+
+    let totalService = 0;
+
+    extras.forEach(function(box){
+
+        if(box.checked){
+
+            totalService += Number(box.value);
+
+        }
+
+    });
+
+    service.innerText = "$" + totalService.toFixed(2);
+
+    calculateTotal();
+
 }
 
-// Coupon
-function applyCoupon() {
 
-    let code = document.querySelector(".summary input").value;
 
-    if (code.toUpperCase() === "SAVE10") {
+let discount = 0;
+
+document.getElementById("applyCoupon").addEventListener("click", function(){
+
+    const coupon = document.getElementById("coupon").value;
+
+    if(coupon === "SAVE10"){
 
         discount = 10;
-        discountText.innerHTML = "-$10";
 
-        alert("Coupon Applied!");
+        alert("Coupon Applied! 10% OFF");
 
-    } else {
+    }else{
 
         discount = 0;
-        discountText.innerHTML = "$0";
 
         alert("Invalid Coupon");
 
     }
 
-    updateTotal();
-
-}
-
-// Extra services
-services.forEach(function(service){
-
-    service.addEventListener("change", updateTotal);
+    calculateTotal();
 
 });
 
-// Checkout
-document.querySelector(".checkout").addEventListener("click", function(){
 
-    updateTotal();
+
+function calculateTotal(){
+
+    let subtotal = Number(
+        document.getElementById("subtotal")
+        .innerText
+        .replace("$","")
+    );
+
+    let ship = Number(
+        document.getElementById("shipping")
+        .innerText
+        .replace("$","")
+    );
+
+    let serviceCost = Number(
+        document.getElementById("service")
+        .innerText
+        .replace("$","")
+    );
+
+    let total = subtotal + ship + serviceCost;
+
+    if(discount > 0){
+
+        total = total - (total * discount / 100);
+
+    }
+
+    document.getElementById("total").innerText =
+        "$" + total.toFixed(2);
+
+}
+
+
+
+document.querySelector(".checkout").addEventListener("click", function(){
 
     alert("Thank you for your purchase!");
 
 });
 
-// Start
-updateTotal();
+
+calculateTotal();

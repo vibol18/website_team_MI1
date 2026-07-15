@@ -4,118 +4,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+
+
     <link rel="stylesheet" href="cart.css">
+
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
+
 <header>
+
     <div class="logo">
-        <h2>MyShop</h2>
+        <h2>Television</h2>
     </div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Cart</a>
-        <a href="#">Contact</a>
+
+        <a href="#">New</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+        <a href="#" class="offer">Special Offers</a>
+
     </nav>
 
-    <div class="buttons">
-        <button>Sign Up</button>
-        <button class="login">Login</button>
+    <div class="nav-right">
+
+        <div class="cart">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <div>
+
+                <h4>My Cart</h4>
+                <p>3 Items</p>
+
+            </div>
+
+        </div>
+
+        <button class="signup">Sign Up</button>
+
+        <button class="login">Log In</button>
+
     </div>
+
 </header>
+
 
 <div class="container">
 
-    <!-- Left Side -->
+
     <div class="left">
 
-        <h2>Shopping Cart</h2>
+        <h2>Order</h2>
+
 
         <div class="product">
-            <img src="https://i.pinimg.com/1200x/41/71/ce/4171ce86670b3d683874e843d96be0a3.jpg" alt="Product">
 
-            <div class="details">
-                <h3>Samsung Smart TV</h3>
+            <img src="https://i.pinimg.com/736x/84/3a/3f/843a3f6df96d4f4010862446dc9a2aa4.jpg" alt="">
+
+            <div class="info">
+
+                <h3>Samsung 55" QLED TV</h3>
+
                 <p>Color: Black</p>
-                <p>Size: 43 Inch</p>
-                <p>$45</p>
+
+                <p>Size: 55"</p>
+
             </div>
 
-            <div class="qty">
-                <label>Quantity</label><br>
-                <input type="number" id="qty" value="1" min="1">
+            <div class="price">
+
+                <span class="new">$700.00</span>
+
+                <del>$55.00</del>
+
             </div>
+
+            <div class="quantity">
+
+                <button class="minus">-</button>
+
+                <span>1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
         </div>
 
-        <h2 style="margin-top:30px;">Delivery Method</h2>
 
-        <div class="delivery">
+        <div class="product">
 
-            <div class="card">
-                <h3>Standard Delivery</h3>
-                <p>3 - 5 Days</p>
-                <strong>$5</strong>
+            <img src="https://i.pinimg.com/1200x/7a/3d/ee/7a3dee2d5bb0c7c3ad389192a0afa746.jpg" alt="">
+
+            <div class="info">
+
+                <h3>LG 65" OLED TV</h3>
+
+                <p>Color: Gray</p>
+
+                <p>Size: 65"</p>
+
             </div>
 
-            <div class="card">
-                <h3>Express Delivery</h3>
-                <p>1 - 2 Days</p>
-                <strong>$15</strong>
+            <div class="price">
+
+                <span class="new">$650.00</span>
+
+                <del>$26.00</del>
+
+            </div>
+
+            <div class="quantity">
+
+                <button class="minus">-</button>
+
+                <span>1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <img src="https://i.pinimg.com/736x/e8/e4/18/e8e41832520adfefab9cd2c0d8ecca64.jpg" alt="">
+
+            <div class="info">
+
+                <h3>Sony 50" Bravia TV</h3>
+
+                <p>Color: White</p>
+
+                <p>Size: 50"</p>
+
+            </div>
+
+            <div class="price">
+
+                <span class="new">$500.00</span>
+                <del>$20.00</del>
+
+            </div>
+
+            <div class="quantity">
+
+                <button class="minus">-</button>
+
+                <span>1</span>
+
+                <button class="plus">+</button>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="delivery-title">Delivery</h2>
+
+        <div class="delivery-grid">
+
+            <div class="delivery-card active">
+
+                <h3>DPD Delivery</h3>
+
+                <p>Expected: Friday</p>
+
+                <h4>$5.25</h4>
+
+            </div>
+
+            <div class="delivery-card">
+
+                <h3>FedEx Delivery</h3>
+
+                <p>Expected: Friday</p>
+
+                <h4>$7.25</h4>
+
+            </div>
+
+            <div class="delivery-card">
+
+                <h3>UPS Delivery</h3>
+
+                <p>Expected: Friday</p>
+
+                <h4>$5.50</h4>
+
+            </div>
+
+            <div class="delivery-card">
+
+                <h3>Collect in Person</h3>
+
+                <p>Thursday</p>
+
+                <h4>FREE</h4>
+
             </div>
 
         </div>
 
     </div>
 
-    <!-- Right Side -->
+
     <div class="right">
 
-        <h2>Order Summary</h2>
+        <h2>Payment Summary</h2>
 
         <div class="summary">
 
-            <p>
-                <span>Subtotal</span>
-                <span id="subtotal">$45</span>
-            </p>
-
-            <p>
-                <span>Shipping</span>
-                <span id="shipping">$5</span>
-            </p>
-
-            <h3>
-                <span>Total</span>
-                <span id="total">$50</span>
-            </h3>
-
             <input
                 type="text"
-                id="coupon"
-                placeholder="Enter Coupon Code">
+                placeholder="Coupon Code"
+                id="coupon">
 
-            <button id="applyCoupon">
-                Apply Coupon
+                <button id="applyCoupon">
+                Apply
             </button>
 
-            <div class="service">
-                <h3>Extra Service</h3>
-                <p>Gift Wrapping (+$3)</p>
+            <hr>
+
+            <div class="row">
+
+                <span>Order Summary</span>
+
+                <span id="subtotal">$122.00</span>
+
             </div>
 
-            <button class="checkout">
-                Proceed to Payment
-            </button>
+            <div class="row">
+
+                <span>Delivery</span>
+
+                <span id="shipping">$5.25</span>
+
+            </div>
+
+            <div class="row">
+
+                <span>Additional Service</span>
+
+                <span id="service">$0.00</span>
+
+            </div>
+
+            <hr>
+
+            <div class="row total">
+
+                <span>Total</span>
+
+                <span id="total">$127.25</span>
+
+            </div>
 
         </div>
+
+        <h2 class="service-title">
+            Additional Service
+        </h2>
+
+        <div class="service">
+
+            <label>
+
+                <input
+                type="checkbox"
+                class="extra"
+                value="10">
+
+                Care+ Package ($10)
+
+            </label>
+
+            <label>
+
+                <input
+                type="checkbox"
+                class="extra"
+                value="2">
+
+                Environment Friendly ($2)
+
+            </label>
+
+            <label>
+
+                <input
+                type="checkbox"
+                class="extra"
+                value="5">
+
+                Golden Guard ($5)
+
+            </label>
+
+        </div>
+
+        <button class="checkout">
+
+            Checkout
+
+        </button>
 
     </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="cart.js"></script>
 
 </body>
 </html>

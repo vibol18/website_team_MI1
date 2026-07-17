@@ -1,103 +1,125 @@
-=
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart TV Shop</title>
-    <link rel="stylesheet" href="viewDetail.css">
+    <title>View Detail</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="viewDetail.css">
 </head>
-<body>
 
-<div class="container">
+<body class="bg-light">
 
-    <div class="image-box">
-        <img src="https://i.pinimg.com/1200x/56/36/65/56366524f3f4d555795e004bc89d4505.jpg"
-        alt="TV">
-    </div>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
 
-    <div class="details">
+        <a class="navbar-brand fw-bold text-primary" href="index.html">
+            Television
+        </a>
 
-        <span class="tag">#02 Electronics</span>
+        <div>
 
-        <h1>Smart LED TV 55-inch</h1>
-
-        <div class="rating">
-            ⭐⭐⭐⭐⭐
-            <span>4.5 (2,847 reviews)</span>
-        </div>
-
-        <div class="price">
-            <h2>$599.99</h2>
-            <del>$799.99</del>
-            <span class="discount">25% OFF</span>
-        </div>
-
-        <p class="description">
-            4K Ultra HD Smart TV with HDR. Perfect for movies,
-            gaming and streaming.
-        </p>
-
-        <h3>Color</h3>
-
-<div class="colors">
-    <div class="color black active" data-color="Black"></div>
-    <div class="color gray" data-color="Gray"></div>
-    <div class="color white" data-color="White"></div>
-</div>
-
-<p>Selected Color:
-    <span id="selectedColor">Black</span>
-</p>
-
-        <h3>Quantity</h3>
-
-        <div class="quantity">
-
-            <button id="minus">-</button>
-
-            <span id="qty">0</span>
-
-            <button id="plus">+</button>
-
-        </div>
-
-        <div class="buttons">
-
-            <button class="cart">
+            <a href="cart.html" class="btn btn-outline-primary">
                 <i class="fa-solid fa-cart-shopping"></i>
-                Add to Cart
-            </button>
-
-            <button class="buy">
-                Buy Now
-            </button>
+            </a>
 
         </div>
 
-        <div class="info">
+    </div>
+</nav>
 
-            <div>
-                
-                <p>Free Shipping</p>
+<div class="container py-5">
+
+    <div class="card shadow-sm border-0 p-4">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 text-center">
+
+                <img
+                    id="productImage"
+                    src="https://i.pinimg.com/1200x/56/36/65/56366524f3f4d555795e004bc89d4505.jpg"
+                    class="img-fluid product-image">
+
             </div>
 
-            <div>
-                
-                <p>30-Day Return</p>
-            </div>
+            <div class="col-lg-6">
 
-            <div>
-                
-                <p>1 Year Warranty</p>
-            </div>
+                <h2>Samsung Smart TV 55"</h2>
 
-            <div>
-                
-                <p>24/7 Support</p>
+                <h3 class="text-primary mb-3">$700</h3>
+
+                <p class="text-muted">
+                    Experience brilliant 4K UHD resolution,
+                    HDR technology and smart streaming.
+                </p>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Color
+                    </label>
+
+                    <select class="form-select" id="color">
+
+                        <option>Black</option>
+                        <option>Gray</option>
+                        <option>White</option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Quantity
+                    </label>
+
+                    <div class="d-flex">
+
+                        <button class="btn btn-primary"
+                            id="minus">
+                            -
+                        </button>
+
+                        <input
+                            type="text"
+                            id="qty"
+                            class="form-control text-center mx-2"
+                            value="1"
+                            readonly>
+
+                        <button
+                            class="btn btn-primary"
+                            id="plus">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary w-100 mb-2">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    Add To Cart
+
+                </button>
+
+                <button class="btn btn-warning w-100">
+
+                    Buy Now
+
+                </button>
+
             </div>
 
         </div>
@@ -109,5 +131,5 @@
 <script src="viewDetail.js"></script>
 
 </body>
-</html>
 
+</html>

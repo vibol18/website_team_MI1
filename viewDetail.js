@@ -1,38 +1,23 @@
-let quantity = 0;
+let qty = 1;
 
-const qty = document.getElementById("qty");
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
+const qtyInput = document.getElementById("qty");
 
-qty.innerText = quantity;
+document.getElementById("plus").onclick = () => {
 
-plus.addEventListener("click", function () {
-    quantity++;
-    qty.innerText = quantity;
-});
+    qty++;
 
-minus.addEventListener("click", function () {
-    if (quantity > 0) {
-        quantity--;
-        qty.innerText = quantity;
+    qtyInput.value = qty;
+
+}
+
+document.getElementById("minus").onclick = () => {
+
+    if(qty > 1){
+
+        qty--;
+
+        qtyInput.value = qty;
+
     }
-});
 
-const colors = document.querySelectorAll(".color");
-const selectedColor = document.getElementById("selectedColor");
-
-colors.forEach(function(color){
-
-    color.addEventListener("click", function(){
-
-        colors.forEach(function(c){
-            c.classList.remove("active");
-        });
-
-        this.classList.add("active");
-
-        selectedColor.innerText = this.dataset.color;
-
-    });
-
-});
+}

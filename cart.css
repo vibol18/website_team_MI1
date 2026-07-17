@@ -1,0 +1,18 @@
+body{
+    background:#f8f9fa;
+}
+
+table img{
+    border-radius:10px;
+}
+
+.card{
+    border-radius:15px;
+}
+
+.qty{
+    width:60px;
+}
+
+.btn{
+    border-radius:8px;

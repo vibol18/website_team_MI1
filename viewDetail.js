@@ -1,35 +1,37 @@
-let quantity = 1;
+let quantity = 0;
 
 const qty = document.getElementById("qty");
+const plus = document.getElementById("plus");
+const minus = document.getElementById("minus");
 
-document.getElementById("plus").onclick = () => {
+qty.innerText = quantity;
+
+plus.addEventListener("click", function () {
     quantity++;
     qty.innerText = quantity;
-};
+});
 
-document.getElementById("minus").onclick = () => {
-    if(quantity > 1){
+minus.addEventListener("click", function () {
+    if (quantity > 0) {
         quantity--;
         qty.innerText = quantity;
     }
-};
-
-// Color Selection
+});
 
 const colors = document.querySelectorAll(".color");
-const selected = document.getElementById("selectedColor");
+const selectedColor = document.getElementById("selectedColor");
 
-const names = ["Black","White","Blue","Red"];
+colors.forEach(function(color){
 
-colors.forEach((color,index)=>{
+    color.addEventListener("click", function(){
 
-    color.addEventListener("click",()=>{
+        colors.forEach(function(c){
+            c.classList.remove("active");
+        });
 
-        colors.forEach(c=>c.classList.remove("active"));
+        this.classList.add("active");
 
-        color.classList.add("active");
-
-        selected.innerText = names[index];
+        selectedColor.innerText = this.dataset.color;
 
     });
 

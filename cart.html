@@ -16,7 +16,7 @@
 
 <body class="bg-light">
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-wheat rounded-pill mt-2  shadow-sm fixed-top rounded-50">
 
     <div class="container">
 
@@ -60,9 +60,9 @@
 
                         </thead>
 
-                        <tbody>
+                        <tbody id="cartBody">
 
-                            <tr>
+                            <tr id="itemRow">
 
                                 <td>
 
@@ -152,17 +152,25 @@
 
                     </div>
 
+                    <div class="d-flex justify-content-between mb-3">
+
+                        <span>Tax (<span id="taxRate">8</span>%)</span>
+
+                        <strong id="taxAmount">$56.00</strong>
+
+                    </div>
+
                     <hr>
 
                     <div class="d-flex justify-content-between">
 
                         <h5>Total</h5>
 
-                        <h5 id="total">$705</h5>
+                        <h5 id="total">$761.00</h5>
 
                     </div>
 
-                    <button class="btn btn-success w-100 mt-4">
+                    <button class="btn btn-success w-100 mt-4" id="checkoutBtn">
 
                         Checkout
 
@@ -178,6 +186,104 @@
 
 </div>
 
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div class="modal fade" id="checkoutModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Delivery Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <form id="checkoutForm">
+                <div class="modal-body">
+
+                    <div class="alert alert-danger d-none" id="checkoutError"></div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Delivery Location</label>
+                        <input type="text" class="form-control" id="deliveryLocation"
+                               placeholder="Street, city, postal code" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="deliveryPhone"
+                               placeholder="e.g. 012 345 678" required>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Subtotal</span>
+                        <span id="modalSubtotal">$700.00</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Shipping</span>
+                        <span id="modalShipping">$5.00</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <span>Tax (<span id="modalTaxRate">8</span>%)</span>
+                        <span id="modalTax">$56.00</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="d-flex justify-content-between">
+                        <strong>Total</strong>
+                        <strong id="modalTotal">$761.00</strong>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success w-100">
+                        Place Order
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- ================= ORDER CONFIRMATION MODAL ================= -->
+
+<div class="modal fade" id="confirmationModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+
+            <div class="modal-body py-5">
+
+                <i class="fa-solid fa-truck fa-3x text-success mb-3"></i>
+
+                <h4>Order Placed!</h4>
+
+                <p class="text-muted">
+                    Waiting for delivery to
+                    <strong id="confirmLocation"></strong>.
+                    We'll contact you at
+                    <strong id="confirmPhone"></strong>.
+                </p>
+
+                <p class="mb-0">
+                    Total paid (incl. tax): <strong id="confirmTotal"></strong>
+                </p>
+
+                <button class="btn btn-primary w-100 mt-4" data-bs-dismiss="modal">
+                    Done
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="cart.js"></script>
 
 </body>
